@@ -1,0 +1,41 @@
+body {
+    background: black;
+    font-size: 18px;
+    line-height: 36px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+#heading {
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    color: rgb(2, 252, 2);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700; 
+}
+
+h3 {
+    margin: 0 0 20 0;
+    padding: 0;
+    color: rgb(250, 7, 7);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 30;
+    font-style: italic;
+}
+
+#main-container {
+    width: 50%;
+    height: 550px;
+    margin: 0 70px 0 0;
+    float: right;
+    border: 3px dashed;
+    border-color: whitesmoke;
+    text-align: center;
+    color: rgb(5, 1, 247);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
