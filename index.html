@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Game</title>
-    <link rel="stylesheet" type="text/css" href="assests/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <script type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
@@ -23,7 +23,24 @@
     <div id="main-container" class="container">
         <div class="row">
             <div class="col-sm-6">
-                <p>Press any key to get started!</p>
+                <p id="instructions">Press any key to get started!</p>
+
+                <br>
+
+                <div id="wins" class="container">Wins:</div>
+
+                <br><br>
+
+                <div id="word" class="container">Current Word</div>
+
+                <br><br><br>
+
+                <div id="guesses" class="container">Number of Remaining Guesses</div>
+
+                <br><br>
+
+                <div id="letters-guessed" class="container">Letters Already Guessed</div>
+
             </div>
         </div>
         <div class="row">

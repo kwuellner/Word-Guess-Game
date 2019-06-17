@@ -29,9 +29,9 @@ h3 {
 }
 
 #main-container {
-    width: 50%;
-    height: 550px;
-    margin: 0 70px 0 0;
+    width: 30%;
+    height: 600px;
+    margin: 0 200px 0 0;
     float: right;
     border: 3px dashed;
     border-color: whitesmoke;
