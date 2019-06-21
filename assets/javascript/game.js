@@ -6,25 +6,28 @@ var remainingGuesses = 0;
 var lettersGuessed = [];
 var maxGuesses = 10;
 var wordLetters = [];
+var blanks = [];
+var numblanks = 0;
 
 function beginGame() {
-    currentWord = games[Math.floor(Math.random() * games.length)];
-    wordLetters = [];
+    var currentWord = games[Math.floor(Math.random() * games.length)];
 
-    for (var i = 0; i < currentWord.length; i++) {
+    // var wordLetters = [];
+
+    numblanks = currentWord.length;
+    for (var i = 0; i < numblanks; i++) {
         wordLetters[i] = "_";
     }
 
-    remainingGuesses = maxGuesses;
-    lettersGuessed = [];
+    var remainingGuesses = maxGuesses;
+    // var lettersGuessed = [];
 
     function updateDisplay() {
-
-        document.getElementById("totalWins").innerHTML = totalWins;
-        document.getElementById("currentWord").innerHTML = wordLetters.join("");
-        document.getElementById("remainingGuesses").innerHTML = remainingGuesses;
-        document.getElementById("lettersGuessed").innerHTML = lettersGuessed;
-    };
+        document.getElementById("totalWins").textContent = totalWins;
+        document.getElementById("currentWord").textContent = wordLetters.join(" ");
+        document.getElementById("remainingGuesses").textContent = remainingGuesses;
+        document.getElementById("lettersGuessed").textContent = lettersGuessed;
+    }
 
     function varifyGuess(letter) {
         if (lettersGuessed.indexOf(letter) === -1) {
@@ -68,7 +71,7 @@ function beginGame() {
             else if (currentWord === "space invaders") {
                 document.getElementById("place holder").scr = "place holder";
             }
-            else if (currentWord === "sthe legend of zelda") {
+            else if (currentWord === "the legend of zelda") {
                 document.getElementById("place holder").scr = "place holder";
             }
             else if (currentWord === "joust") {
@@ -82,19 +85,28 @@ function beginGame() {
             }
         }
 
+        function youLost() {
+
+            if (remainingGuesses <= 0) {
+                ifFinished = true;
+            }
+        }
+        document.onkeyup = function (event) {
+            if (ifFinished) {
+                beginGame();
+                ifFinished = false;
+            }
+            else {
+                if (event.keyCode >= 65 && event.keyCode <= 90) {
+                    varifyGuess(event.key.toUpperCase());
+                    updateDisplay();
+                    ifWon();
+                }
+            }
+        }
     }
+
+    updateDisplay()
 }
 
-
-
-    // wordLetters = currentWord.split("");
-    // wordSpacing = wordLetters.length;
-
-
-//     console.log(beginGame);
-// }
-
-
-
-//     console.log(updateDisplay)
-// }
+beginGame();
